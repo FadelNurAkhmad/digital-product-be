@@ -1,0 +1,17 @@
+{
+  "rate_limit_time": 60,
+  "rate_limit_max": 100,
+  "timeout": 5000,
+  "max_redirects": 5,
+  "db_dialect": "postgres",
+  "db_host": "localhost",
+  "db_username": "test_user",
+  "db_password": "test_password",
+  "db_name": "digital_product_db",
+  "db_port": 5432,
+  "db_connection_timeout": 3000,
+  "db_acquire_timeout": 3000,
+  "db_pool_size": 10,
+  "jwt_secret": "supersecretkey123",
+  "jwt_expires_in": "1h"
+}
