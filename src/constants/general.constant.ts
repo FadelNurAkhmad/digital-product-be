@@ -1,0 +1,21 @@
+export const generalConstant = {
+  SOMETHING_WENT_WRONG: 'Ada yang salah, silakan coba lagi nanti.',
+  TYPE_NOT_FOUND: 'Tipe tidak ditemukan.',
+  CATEGORY_NOT_FOUND: 'Kategori tidak ditemukan.',
+  WITHDRAWAL_NOT_FOUND: 'Penarikan tidak ditemukan.',
+  USER_NOT_FOUND: 'Pengguna tidak ditemukan.',
+  PRODUCT_NOT_FOUND: 'Produk tidak ditemukan.',
+  CURRICULUM_NOT_FOUND: 'Kurikulum tidak ditemukan.',
+  ORDER_NOT_FOUND: 'Pesanan tidak ditemukan.',
+  MIDTRANS_ERROR: 'Terjadi kesalahan pada Midtrans.',
+  BALANCE_NOT_ENOUGH: 'Saldo tidak mencukupi.',
+  WITHDRAW_MESSAGE:
+    'Penarikan sedang diproses, harap tunggu 1x24 jam untuk dana masuk ke rekening Anda.',
+  PRODUCT_ALREADY_EXISTS: 'Produk sudah kamu beli.',
+  WITHDRAW_STATUS_INVALID: 'Status penarikan tidak valid.',
+  VOUCHER_NOT_FOUND: 'Voucher tidak ditemukan.',
+  VOUCHER_EXPIRED: 'Voucher sudah kadaluarsa.',
+  VOUCHER_CODE_ALREADY_EXISTS: 'Kode voucher sudah digunakan.',
+  ECOURSE_SUB_MATERIAL_NOT_FOUND: 'Materi e-course tidak ditemukan.',
+  RATING_ALREADY_EXISTS: 'Anda sudah memberikan rating untuk produk ini.',
+};
