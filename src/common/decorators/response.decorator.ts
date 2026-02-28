@@ -1,3 +1,18 @@
 import { SetMetadata } from '@nestjs/common';
 
-export const Response = (...args: string[]) => SetMetadata('response', args);
+export const RESPONSE_MESSAGE = 'response:message';
+export const RESPONSE_OPTS = 'response:opts';
+
+export type ResponseOpts = {
+  code?: number;
+  message?: string;
+  liftToken?: boolean;
+};
+
+export const ResponseMessage = (message: string) => {
+  return SetMetadata(RESPONSE_MESSAGE, message);
+};
+
+export const ResponseOptions = (opts: ResponseOpts) => {
+  return SetMetadata(RESPONSE_OPTS, opts);
+};
