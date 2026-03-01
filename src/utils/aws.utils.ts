@@ -198,10 +198,10 @@ export class AwsUtil {
             .map((p: string) => p.trim())
             .filter(Boolean);
         } else {
-          splitParameterNames = [parameterNames.trim()];
+          splitParameterNames = [parameterNames.trim()]; // Jika hanya ada satu nama parameter, langsung masukkan ke array
         }
       } else {
-        splitParameterNames = [];
+        splitParameterNames = []; // Jika tidak ada nama parameter, gunakan array kosong
       }
 
       let result: IAWSEnvironment = {} as IAWSEnvironment;
@@ -217,7 +217,7 @@ export class AwsUtil {
 
         // Parse isi parameter (asumsi isi value adalah JSON) dan gabungkan ke object result
         const dataName: any = JSON.parse(response.Parameter.Value);
-        result = { ...result, ...dataName };
+        result = { ...result, ...dataName }; // Gabungkan hasil parsing ke object result utama, sehingga semua konfigurasi terkumpul dalam satu object IAWSEnvironment
       }
 
       return result;
