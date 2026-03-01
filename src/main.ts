@@ -1,8 +1,40 @@
-import { NestFactory } from '@nestjs/core';
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+import { NestFactory, Reflector } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { CustomValidationPipe } from './common/pipes/custom-validation.pipe';
+import { ResponseInterceptor } from './common/interceptors/response.interceptor';
+import { HttpExceptionFilter } from './common/filters/http-exception.filter';
+import { RequestMethod, INestApplication } from '@nestjs/common';
 
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+async function bootstrap(): Promise<void> {
+  const app: INestApplication<any> = await NestFactory.create(AppModule);
+  const reflector: Reflector = app.get(Reflector);
+
+  app.enableCors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: [
+      'Content-type',
+      'Authorization',
+      'authorization',
+      'x-api-key',
+      'X-Api-Key',
+      'x-amz-date',
+      'x-amz-security-token',
+    ],
+  });
+
+  app.useGlobalPipes(new CustomValidationPipe());
+  app.useGlobalInterceptors(new ResponseInterceptor(reflector));
+  app.useGlobalFilters(new HttpExceptionFilter());
+
+  app.setGlobalPrefix('api/v1', {
+    exclude: [{ path: '/', method: RequestMethod.GET }],
+  });
+
   await app.listen(process.env.PORT ?? 3000);
+  console.log('App is running on port ' + (process.env.PORT ?? 3000));
 }
+
 bootstrap();

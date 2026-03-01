@@ -1,0 +1,19 @@
+export interface IAWSEnvironment {
+  rate_limit_time: number;
+  rate_limit_max: number;
+  timeout: number;
+  max_redirects: number;
+  db_dialect: string;
+  db_host: string;
+  db_username: string;
+  db_password: string;
+  db_port: number;
+  db_name: string;
+  db_connection_timeout: number;
+  db_acquire_timeout: number;
+  db_max_retry: number;
+  db_pool_size: number;
+  midtrans_client_key: string;
+  midtrans_server_key: string;
+  midtrans_is_production: boolean;
+}

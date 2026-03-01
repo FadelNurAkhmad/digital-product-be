@@ -13,5 +13,8 @@
   "db_acquire_timeout": 3000,
   "db_pool_size": 10,
   "jwt_secret": "supersecretkey123",
-  "jwt_expires_in": "1h"
+  "jwt_expires_in": "1h",
+  "midtrans_client_key": "",
+  "midtrans_server_key": "",
+  "midtrans_is_production": ""
 }
