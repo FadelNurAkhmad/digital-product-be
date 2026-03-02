@@ -20,7 +20,9 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "types": ["node", "multer"], // untuk include type dari node dan multer
+    "typeRoots": ["./node_modules/@types"] // untuk mencari type di node_modules/@types
   },
 
   "include": ["src/**/*.ts", "src/types/multer-express.d.ts", "test"], // untuk include file types yang dibuat sendiri
